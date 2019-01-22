@@ -1,0 +1,300 @@
+       [5.6, 2.8, 4.9, 2. ],
+       [7.7, 2.8, 6.7, 2. ],
+       [6.3, 2.7, 4.9, 1.8],
+       [6.7, 3.3, 5.7, 2.1],
+       [7.2, 3.2, 6. , 1.8],
+       [6.2, 2.8, 4.8, 1.8],
+       [6.1, 3. , 4.9, 1.8],
+       [6.4, 2.8, 5.6, 2.1],
+       [7.2, 3. , 5.8, 1.6],
+       [7.4, 2.8, 6.1, 1.9],
+       [7.9, 3.8, 6.4, 2. ],
+       [6.4, 2.8, 5.6, 2.2],
+       [6.3, 2.8, 5.1, 1.5],
+       [6.1, 2.6, 5.6, 1.4],
+       [7.7, 3. , 6.1, 2.3],
+       [6.3, 3.4, 5.6, 2.4],
+       [6.4, 3.1, 5.5, 1.8],
+       [6. , 3. , 4.8, 1.8],
+       [6.9, 3.1, 5.4, 2.1],
+       [6.7, 3.1, 5.6, 2.4],
+       [6.9, 3.1, 5.1, 2.3],
+       [5.8, 2.7, 5.1, 1.9],
+       [6.8, 3.2, 5.9, 2.3],
+       [6.7, 3.3, 5.7, 2.5],
+       [6.7, 3. , 5.2, 2.3],
+       [6.3, 2.5, 5. , 1.9],
+       [6.5, 3. , 5.2, 2. ],
+       [6.2, 3.4, 5.4, 2.3],
+       [5.9, 3. , 5.1, 1.8]])
+
+In [23]: y
+Out[23]:
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2])
+
+In [24]: knn
+Out[24]:
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+
+In [25]: knn.fit(x,y)
+Out[25]:
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+
+In [26]: knn = KNeighborsClassifier(2)
+
+In [27]: knn = KNeighborsClassifier(n_neighbors=2)
+
+In [28]: knn
+Out[28]:
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=2, p=2,
+           weights='uniform')
+
+In [29]: knn.fit(x,y)
+Out[29]:
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=2, p=2,
+           weights='uniform')
+
+In [30]: knn.predict([[4.5, 3.0, 5.1, 1.9]])
+Out[30]: array([2])
+
+In [31]: iris.target-names
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-31-e19592b241bb> in <module>()
+----> 1 iris.target-names
+
+NameError: name 'names' is not defined
+
+In [32]: iris.target_names
+Out[32]: array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
+In [33]: result = {0:"setosa", 1:"versicolor", 2:"virginica")
+  File "<ipython-input-33-29ba79122b5d>", line 1
+    result = {0:"setosa", 1:"versicolor", 2:"virginica")
+                                                       ^
+SyntaxError: invalid syntax
+
+
+In [34]:  {0:"setosa", 1:"versicolor", 2:"virginica")
+  File "<ipython-input-34-bbc73ad9af3d>", line 1
+    {0:"setosa", 1:"versicolor", 2:"virginica")
+                                              ^
+SyntaxError: invalid syntax
+
+
+In [35]: from sklearn.datasets import load_wine
+
+In [36]: wine=load_wine()
+
+In [37]: wine
+Out[37]:
+{'DESCR': 'Wine Data Database\n====================\n\nNotes\n-----\nData Set Ch
+aracteristics:\n    :Number of Instances: 178 (50 in each of three classes)\n
+ :Number of Attributes: 13 numeric, predictive attributes and the class\n    :At
+tribute Information:\n \t\t- 1) Alcohol\n \t\t- 2) Malic acid\n \t\t- 3) Ash\n\t
+\t- 4) Alcalinity of ash  \n \t\t- 5) Magnesium\n\t\t- 6) Total phenols\n \t\t-
+7) Flavanoids\n \t\t- 8) Nonflavanoid phenols\n \t\t- 9) Proanthocyanins\n\t\t-
+10)Color intensity\n \t\t- 11)Hue\n \t\t- 12)OD280/OD315 of diluted wines\n \t\t
+- 13)Proline\n        \t- class:\n                - class_0\n                - c
+lass_1\n                - class_2\n\t\t\n    :Summary Statistics:\n    \n    ===
+========================== ==== ===== ======= =====\n
+        Min   Max   Mean     SD\n    ============================= ==== ===== ==
+===== =====\n    Alcohol:                      11.0  14.8    13.0   0.8\n    Mal
+ic Acid:                   0.74  5.80    2.34  1.12\n    Ash:
+       1.36  3.23    2.36  0.27\n    Alcalinity of Ash:            10.6  30.0
+ 19.5   3.3\n    Magnesium:                    70.0 162.0    99.7  14.3\n    Tot
+al Phenols:                0.98  3.88    2.29  0.63\n    Flavanoids:
+       0.34  5.08    2.03  1.00\n    Nonflavanoid Phenols:         0.13  0.66
+ 0.36  0.12\n    Proanthocyanins:              0.41  3.58    1.59  0.57\n    Col
+our Intensity:              1.3  13.0     5.1   2.3\n    Hue:
+       0.48  1.71    0.96  0.23\n    OD280/OD315 of diluted wines: 1.27  4.00
+ 2.61  0.71\n    Proline:                       278  1680     746   315\n    ===
+========================== ==== ===== ======= =====\n\n    :Missing Attribute Va
+lues: None\n    :Class Distribution: class_0 (59), class_1 (71), class_2 (48)\n
+   :Creator: R.A. Fisher\n    :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa
+.gov)\n    :Date: July, 1988\n\nThis is a copy of UCI ML Wine recognition datase
+ts.\nhttps://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data\n\
+nThe data is the results of a chemical analysis of wines grown in the same\nregi
+on in Italy by three different cultivators. There are thirteen different\nmeasur
+ements taken for different constituents found in the three types of\nwine.\n\nOr
+iginal Owners: \n\nForina, M. et al, PARVUS - \nAn Extendible Package for Data E
+xploration, Classification and Correlation. \nInstitute of Pharmaceutical and Fo
+od Analysis and Technologies,\nVia Brigata Salerno, 16147 Genoa, Italy.\n\nCitat
+ion:\n\nLichman, M. (2013). UCI Machine Learning Repository\n[http://archive.ics
+.uci.edu/ml]. Irvine, CA: University of California,\nSchool of Information and C
+omputer Science. \n\nReferences\n----------\n(1) \nS. Aeberhard, D. Coomans and
+O. de Vel, \nComparison of Classifiers in High Dimensional Settings, \nTech. Rep
+. no. 92-02, (1992), Dept. of Computer Science and Dept. of \nMathematics and St
+atistics, James Cook University of North Queensland. \n(Also submitted to Techno
+metrics). \n\nThe data was used with many others for comparing various \nclassif
+iers. The classes are separable, though only RDA \nhas achieved 100% correct cla
+ssification. \n(RDA : 100%, QDA 99.4%, LDA 98.9%, 1NN 96.1% (z-transformed data)
+) \n(All results using the leave-one-out technique) \n\n(2) \nS. Aeberhard, D. C
+oomans and O. de Vel, \n"THE CLASSIFICATION PERFORMANCE OF RDA" \nTech. Rep. no.
+ 92-01, (1992), Dept. of Computer Science and Dept. of \nMathematics and Statist
+ics, James Cook University of North Queensland. \n(Also submitted to Journal of
+Chemometrics). \n',
+ 'data': array([[1.423e+01, 1.710e+00, 2.430e+00, ..., 1.040e+00, 3.920e+00,
+         1.065e+03],
+        [1.320e+01, 1.780e+00, 2.140e+00, ..., 1.050e+00, 3.400e+00,
+         1.050e+03],
+        [1.316e+01, 2.360e+00, 2.670e+00, ..., 1.030e+00, 3.170e+00,
+         1.185e+03],
+        ...,
+        [1.327e+01, 4.280e+00, 2.260e+00, ..., 5.900e-01, 1.560e+00,
+         8.350e+02],
+        [1.317e+01, 2.590e+00, 2.370e+00, ..., 6.000e-01, 1.620e+00,
+         8.400e+02],
+        [1.413e+01, 4.100e+00, 2.740e+00, ..., 6.100e-01, 1.600e+00,
+         5.600e+02]]),
+ 'feature_names': ['alcohol',
+  'malic_acid',
+  'ash',
+  'alcalinity_of_ash',
+  'magnesium',
+  'total_phenols',
+  'flavanoids',
+  'nonflavanoid_phenols',
+  'proanthocyanins',
+  'color_intensity',
+  'hue',
+  'od280/od315_of_diluted_wines',
+  'proline'],
+ 'target': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+ 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2]),
+ 'target_names': array(['class_0', 'class_1', 'class_2'], dtype='<U7')}
+
+In [38]: wine.feature_names
+Out[38]:
+['alcohol',
+ 'malic_acid',
+ 'ash',
+ 'alcalinity_of_ash',
+ 'magnesium',
+ 'total_phenols',
+ 'flavanoids',
+ 'nonflavanoid_phenols',
+ 'proanthocyanins',
+ 'color_intensity',
+ 'hue',
+ 'od280/od315_of_diluted_wines',
+ 'proline']
+
+In [39]: x = wine.data
+
+In [40]: x
+Out[40]:
+array([[1.423e+01, 1.710e+00, 2.430e+00, ..., 1.040e+00, 3.920e+00,
+        1.065e+03],
+       [1.320e+01, 1.780e+00, 2.140e+00, ..., 1.050e+00, 3.400e+00,
+        1.050e+03],
+       [1.316e+01, 2.360e+00, 2.670e+00, ..., 1.030e+00, 3.170e+00,
+        1.185e+03],
+       ...,
+       [1.327e+01, 4.280e+00, 2.260e+00, ..., 5.900e-01, 1.560e+00,
+        8.350e+02],
+       [1.317e+01, 2.590e+00, 2.370e+00, ..., 6.000e-01, 1.620e+00,
+        8.400e+02],
+       [1.413e+01, 4.100e+00, 2.740e+00, ..., 6.100e-01, 1.600e+00,
+        5.600e+02]])
+
+In [41]: y= wine.target
+
+In [42]: y
+Out[42]:
+array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2])
+
+In [43]: wine.target_names
+Out[43]: array(['class_0', 'class_1', 'class_2'], dtype='<U7')
+
+In [44]: x.shape
+Out[44]: (178, 13)
+
+In [45]: type(x)
+Out[45]: numpy.ndarray
+
+In [46]: y.shape
+Out[46]: (178,)
+
+In [47]: from sklearn.linear_model import LogisticRegression as lr
+
+In [48]: logreg = lr()
+
+In [49]: logreg
+Out[49]:
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+
+In [50]: new_data = x[10]
+
+In [51]: new_data
+Out[51]:
+array([1.41e+01, 2.16e+00, 2.30e+00, 1.80e+01, 1.05e+02, 2.95e+00,
+       3.32e+00, 2.20e-01, 2.38e+00, 5.75e+00, 1.25e+00, 3.17e+00,
+       1.51e+03])
+
+In [52]: logreg.predict(new_data)
+---------------------------------------------------------------------------
+NotFittedError                            Traceback (most recent call last)
+<ipython-input-52-f93440bc8649> in <module>()
+----> 1 logreg.predict(new_data)
+
+~\Anaconda3\lib\site-packages\sklearn\linear_model\base.py in predict(self, X)
+    322             Predicted class label per sample.
+    323         """
+--> 324         scores = self.decision_function(X)
+    325         if len(scores.shape) == 1:
+    326             indices = (scores > 0).astype(np.int)
+
+~\Anaconda3\lib\site-packages\sklearn\linear_model\base.py in decision_function(
+self, X)
+    296         if not hasattr(self, 'coef_') or self.coef_ is None:
+    297             raise NotFittedError("This %(name)s instance is not fitted "
+
+--> 298                                  "yet" % {'name': type(self).__name__})
+    299
+    300         X = check_array(X, accept_sparse='csr')
+
+NotFittedError: This LogisticRegression instance is not fitted yet
+
+In [53]: logreg.fit(x,y)
+Out[53]:
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=100, multi_class='ovr', n_jobs=1,
+          penalty='l2', random_state=None, solver='liblinear', tol=0.0001,
+          verbose=0, warm_start=False)
+
+In [54]: logreg.predict([new_data])
+Out[54]: array([0])
+
+In [55]:

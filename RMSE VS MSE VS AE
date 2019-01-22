@@ -1,0 +1,14 @@
+
+Root Mean Square Error (RMSE) is the standard deviation of the residuals (prediction errors). 
+Residuals are a measure of how far from the regression line data points are; 
+RMSE is a measure of how spread out these residuals are.
+In other words, it tells you how concentrated the data is around the line of best fit. 
+Root mean square error is commonly used in forecasting, and regression analysis to verify experimental results. 
+It is gotten by the squareroot of  the average squared difference between the estimated values and what is estimated
+There is a direct relationship with the correlation coefficient. For example, if the correlation coefficient is 1, the RMSE will be 0, because all of the points lie on the regression line (and therefore there are no errors).
+
+Mean squared error (MSE)  measures the average of the squares of the errors—that is, the average squared difference between the estimated values and what is estimated
+
+Absolute Error is simply the difference between the estimated values and what is estimated
+
+In summary, the root mean squared error is the most accurate since it checks for the concentration around the line of best fit, meaning it takes all the parameters of the others into consideration
